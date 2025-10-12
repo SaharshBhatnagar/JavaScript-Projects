@@ -1,0 +1,38 @@
+main {
+    display: flex;
+    flex-direction: column; 
+    align-items: center;    
+    gap: 15px; 
+    color: rgb(218, 206, 206);
+}
+
+h2 {
+    position: absolute;
+    top: 35%;
+    left: 45%;
+    font-size: 2.2em;
+    color: rgb(218, 206, 206);
+    letter-spacing: 1px; 
+}
+.timer {
+    position: absolute;
+    top: 50%;
+    left: 47.5%;
+    font-size: 2.2em;
+}
+.start-stop {
+    position: absolute;
+    top: 60%;
+    left: 47.5%;
+    font-size: 2.2em;
+    padding: 4px 8px;
+}
+.reset {
+    position: absolute;
+    cursor:pointer;
+    top: 60%;
+    left: 62%;
+    font-size: 2.2em;
+    padding: 4px 8px;
+    border: 2px solid black;
+}

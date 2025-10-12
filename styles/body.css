@@ -1,9 +1,9 @@
 body {
     margin: 0;
-    font-family: 'Lato', sans-serif;
+    font-family: sans-serif;
     color: black;
-    background: linear-gradient(to bottom, #B9D8E1, #9BCBE5 ,#5BA3C6, #629BB5);
-    display: flex;
     min-height: 100vh;
-    user-select: none;
+    background: linear-gradient(to bottom, #E0CBB9, #D8A694, #C0887D, #A86A65, #754B4D);
+    display: flex;
+    overflow: hidden;
 }
