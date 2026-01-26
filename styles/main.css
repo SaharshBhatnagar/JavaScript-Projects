@@ -1,63 +1,75 @@
 main {
     display: flex;
     flex-direction: column; 
-    align-items: center;    
-    gap: 15px; 
+    align-items: center;
+    justify-content: center;
+    text-align: center;    
+    gap: 20px; 
     color: rgb(218, 206, 206);
 }
 
 h2 {
-    position: absolute;
-    top: 35%;
-    left: 45%;
+    margin: 0;
     font-size: 2.2em;
     color: rgb(218, 206, 206);
     letter-spacing: 1px; 
 }
 .timer {
-    position: absolute;
-    top: 50%;
-    left: 47.5%;
-    font-size: 2.2em;
+    font-size: 4em;
+    color: rgb(218, 206, 206);
 }
-.start-stop {
-    position: absolute;
-    top: 60%;
-    left: 42%;
-    font-size: 2.2em;
-    padding: 4px 8px;
+.controls {
+    display: flex;
+    gap: 20px;
+}
+button {
+    background: transparent;
+    font-size: 1.2em;
+    color: rgb(218, 206, 206);
+    border: 2px solid rgb(218, 206, 206);
+    border-radius: 20px;
+    padding: 10px 20px;
+    cursor: pointer;
 }
 
-.start {
-    background: transparent;
-    font-size: 1em;
-    color:rgb(218, 206, 206);
-    border: 2px solid rgb(218, 206, 206);
-    border-radius: 20px 20px 20px 20px;
-    cursor: pointer;
-}
-.stop {
-    background: transparent;
-    font-size: 1em;
-    color:rgb(218, 206, 206);
-    border: 2px solid rgb(218, 206, 206);
-    border-radius: 20px 20px 20px 20px;
-    cursor: pointer;
-}
-.reset {
-    position: absolute;
-    cursor:pointer;
-    top: 60%;
-    left: 55%;
-    font-size: 2.2em;
-    padding: 4px 8px;
+@media (max-width: 600px) {
+    h2 {
+        font-size: 1.5em; 
+    }
+    .timer {
+        font-size: 3em;   
+    }
+    .controls {
+        gap: 10px;        
+    }
+    button {
+        font-size: 1em;
+        padding: 8px 16px;
+    }
 }
 
-.bt-reset {
-    background: transparent;
-    font-size: 1em;
-    color:rgb(218, 206, 206);
-    border: 2px solid rgb(218, 206, 206);
-    border-radius: 20px 20px 20px 20px;
-    cursor: pointer;
+@media (min-width: 601px) and (max-width: 1024px) {
+    h2 {
+        font-size: 2.5em; 
+    }
+    .timer {
+        font-size: 5em;
+    }
+}
+
+@media (min-width: 1921px) {
+    main {
+        gap: 40px; 
+    }
+    h2 {
+        font-size: 4em; 
+    }
+    .timer {
+        font-size: 8em; 
+    }
+    button {
+        font-size: 2em;
+        border-width: 4px; 
+        padding: 15px 40px;
+    }
 }

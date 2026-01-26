@@ -5,5 +5,7 @@ body {
     min-height: 100vh;
     background: linear-gradient(to bottom, #E0CBB9, #D8A694, #C0887D, #A86A65, #754B4D);
     display: flex;
-    overflow: hidden;
+    justify-content: center;
+    align-items: center;
+    
 }
