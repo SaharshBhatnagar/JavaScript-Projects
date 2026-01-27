@@ -32,6 +32,21 @@ button {
     cursor: pointer;
 }
 
+.start-on {
+    color: rgb(218, 206, 206);
+    background-color: rgba(218, 206, 206, 0.25);
+}
+
+.stop-on {
+    color: rgb(218, 206, 206);
+    background-color: rgba(218, 206, 206, 0.25);
+}
+
+.reset-on {
+    color: rgb(218, 206, 206);
+    background-color: rgba(218, 206, 206, 0.25);
+}
+
 @media (max-width: 600px) {
     h2 {
         font-size: 1.5em; 

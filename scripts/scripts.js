@@ -3,7 +3,7 @@ const jsStart = document.querySelector('.js-start');
 const jsStop = document.querySelector('.js-stop');
 const jsReset = document.querySelector('.js-reset');
 
-let totalSeconds = 0;
+let totalSeconds = Number(localStorage.getItem('stopwatchTime')) || 0;
 let intervalId = null;
 
 // start
@@ -12,7 +12,14 @@ jsStart.addEventListener('click', () => {
         intervalId = setInterval(() => {
         totalSeconds ++;
         updateDisplay();
-        }, 1000); // 1000 miliseconds
+
+        localStorage.setItem('stopwatchTime', totalSeconds);
+
+        }, 1000); // 1000 miliseconds = 1 second
+
+        jsStart.classList.add('start-on');
+        jsStop.classList.remove('stop-on');
+        jsReset.classList.remove('reset-on');
     }
 });
 
@@ -20,6 +27,10 @@ jsStart.addEventListener('click', () => {
 jsStop.addEventListener('click', () => {
     clearInterval(intervalId);
     intervalId = null;
+
+    jsStop.classList.add('stop-on');
+    jsStart.classList.remove('start-on');
+    jsReset.classList.remove('reset-on');
 });
 
 // reset
@@ -27,15 +38,21 @@ jsReset.addEventListener('click', () => {
     clearInterval(intervalId);
     intervalId = null;
 
+    localStorage.removeItem('stopwatchTime');
     totalSeconds = 0;
+
     timerDisplay.textContent = '00 : 00 : 00';
+
+    jsReset.classList.add('reset-on');
+    jsStart.classList.remove('start-on');
+    jsStop.classList.remove('stop-on');
 });
 
 function updateDisplay() {
    
-    seconds = Math.floor(totalSeconds % 60)
-    minutes = Math.floor((totalSeconds  % 3600) / 60)
-    hours = Math.floor(totalSeconds / 3600) 
+    const seconds = Math.floor(totalSeconds % 60)
+    const minutes = Math.floor((totalSeconds  % 3600) / 60)
+    const hours = Math.floor(totalSeconds / 3600) 
 
     const hrsString = hours.toString().padStart(2, '0');
     const minsString = minutes.toString().padStart(2, '0');
