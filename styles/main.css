@@ -1,13 +1,130 @@
 .Feedback-block {
     width: 400px;
-    height:400px;
-    border: 2px solid black;
+    border-radius: 12px;
+    padding:20px;
+    background-color:floralwhite;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
 }
 
+.Feedback-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 
-button {
+    border-bottom: 1px solid #e0e0e0;
+
+    padding-bottom: 10px;
+
+    margin-left: -20px;
+    margin-right: -20px;
+
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.Feedback-title {
+    color: #333;
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+.exit {
+    border-radius: 20px;
+    border: None;
+    cursor: pointer;
+    background-color: floralwhite;
+    color:#333;
+    font-size: 1.2em;
+}
+
+.rating-title {
+    color: #333;
+    margin-bottom: 0;
+    margin-top: 10px;
+    font-size: 1.1em;
+}
+
+.rating-block label{
+    gap: 15px;
+}
+
+.rating-block input {
+    display: none;
+}
+
+.rating-block label {
+    font-size: 50px;
+    color: #ccc;
+    cursor: pointer;
+    margin-top: 0;
+    padding: 0 15px;
+}
+
+.feedback-input {
+    margin-top: 4px;
+    margin-bottom: 4px;
+}
+
+.feedback-input label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 8px;
+    font-size: 1.1em;
+    color: #333;
+}
+
+.text-area {
+    width: 100%;
+    height: 120px;
+}
+
+.text-area {
+    width: 100%;
+    height: 120px;
+    padding: 12px;
+    
+    border: 1px solid #ccc;
+    border-radius: 8px; 
+    
+    font-family: inherit;
+    font-size: 14px;
+    box-sizing: border-box; 
+    resize: vertical; 
+    outline: none; 
+}
+
+button.submit {
+    padding: 12px 0;
+    font-size: 16px;
+
     background-color: #4169e1;
     color: white;
     border: None;
     width: 100%;
+    border-radius: 4px;
+    margin-top: 10px;
+    cursor: pointer;
 }
+
+
+@media (max-width: 480px) {
+    
+    
+    .rating-block label {
+        font-size: 35px; 
+        padding: 0 5px;  
+    }
+
+    .Feedback-block {
+        width: 250px;
+        padding: 15px; 
+    }
+
+    .Feedback-head {
+        margin-left: -15px;
+        margin-right: -15px;
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+}
+
