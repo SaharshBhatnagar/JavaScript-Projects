@@ -4,6 +4,7 @@
     padding:20px;
     background-color:floralwhite;
     box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+    display: none;
 }
 
 .Feedback-head {
