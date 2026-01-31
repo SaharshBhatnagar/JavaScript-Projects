@@ -49,6 +49,14 @@
     gap: 15px;
 }
 
+.rating-error {
+    color: red;
+    padding: 0px;
+    margin: 0px;
+    font-size: 16px;
+    display: none;
+}
+
 .rating-block input {
     display: none;
 }
