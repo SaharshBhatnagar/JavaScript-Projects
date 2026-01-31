@@ -45,16 +45,19 @@
     font-size: 1.1em;
 }
 
-.rating-block label{
-    gap: 15px;
-}
-
 .rating-error {
     color: red;
     padding: 0px;
     margin: 0px;
     font-size: 16px;
     display: none;
+}
+
+.rating-star {
+    display: flex;
+    flex-direction: row-reverse; 
+    justify-content: flex-end;
+    gap: 5px;                    
 }
 
 .rating-block input {
@@ -66,7 +69,18 @@
     color: #ccc;
     cursor: pointer;
     margin-top: 0;
-    padding: 0 15px;
+    padding: 0 16px;
+    transition: color 0.2s ease;
+    gap: 15px;
+}
+
+.rating-block label:hover,
+.rating-block label:hover ~ label {
+    color: #ffc107;
+}
+
+.rating-block input:checked ~ label {
+    color: #ffc107;
 }
 
 .feedback-input {
