@@ -4,7 +4,12 @@ const todoList = document.querySelector('.todos-container');
 
 addButton.addEventListener('click', addTodo);
 
-let TodoNumber = 1;
+inputField.addEventListener('keydown', (event) => {
+    if (event.key === "Enter") {
+        addTodo();
+    }
+});
+
 
 function addTodo() {
     const TodoInput = inputField.value;
@@ -16,7 +21,7 @@ function addTodo() {
     const newTodosHTML = `
         <div class="display-todo">
             <div class="todos-grp">
-                <span class="todos-number">${TodoNumber}.</span>
+                <span class="todos-number">1.</span>
                 <p class="todos-task">${TodoInput}</p>
             </div>
             <div class="todos-btn-grp">
@@ -28,35 +33,84 @@ function addTodo() {
 
     todoList.insertAdjacentHTML('beforeend', newTodosHTML);
 
-    TodoNumber += 1;
-
     inputField.value = "";
+
+    rememberTasksNum();
+    saveData();
 };
 
 todoList.addEventListener('click', checkDeleteEdit);
 
+todoList.addEventListener('keydown', function saveOnEnter(event) {
+    if (event.key === "Enter") {
+        if (event.target.classList.contains('todos-task')) {
+            event.preventDefault();
+            event.target.closest('.display-todo').querySelector('.todo-edit').click();
+        }
+    }
+});
+
 function checkDeleteEdit(event) {
+
     const item = event.target;
 
     if (item.classList[0] === 'todo-delete') {
+
         const todo = item.closest('.display-todo');
+
         todo.remove();
+        rememberTasksNum();
+        saveData();
     }
+
     else if (item.classList[0] === 'todo-edit') {
+
         const todoWrapper = item.closest('.display-todo');
         const todoTextElement = todoWrapper.querySelector('.todos-task')
+
+
         if (item.innerText === "Edit") {
             todoTextElement.contentEditable = true;
             todoTextElement.style.outline = "none";
+
             todoTextElement.style.backgroundColor ="aliceblue";
             todoTextElement.style.border = "2px solid dodgerblue";
+
             todoTextElement.focus();
             item.innerText = "Save";
+
         } else {
             todoTextElement.contentEditable = false;
+
+            saveData();
+
             todoTextElement.style.backgroundColor = "";
+
             todoTextElement.style.border = "none";
             item.innerText = "Edit"
         }
     }
-}
+};
+
+function saveData() {
+    localStorage.setItem("myTodos", todoList.innerHTML);
+};
+
+function showTask() {
+    const savedData = localStorage.getItem("myTodos");
+    if (savedData) {
+        todoList.innerHTML = savedData;
+        rememberTasksNum();
+    }
+};
+
+showTask();
+
+function rememberTasksNum() {
+
+    const allNumbers = document.querySelectorAll('.todos-number');
+
+    allNumbers.forEach((codeHTML, index) => {
+        codeHTML.innerText = `${index + 1}.`;
+    })
+};
