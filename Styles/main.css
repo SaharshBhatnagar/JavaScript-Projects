@@ -1,6 +1,55 @@
+main {
+    display: flex;
+    flex-direction: column;
+    height: 100vh; 
+}
+
+.container { 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 canvas {
     display: block;
     cursor: crosshair;
     background-color: white;
-    border: 2px solid black;
+    border: 1px solid #ddd; 
+    border-radius: 8px;    
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.Controls {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color:#f8f9fa;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 15px 0;
+    border-top: 1px solid #ccc;
+    z-index: 10;
+}
+
+#saveBtn, #clearBtn {
+    background-color: #343a40;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 25px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+#saveBtn:hover, #clearBtn:hover {
+    background-color: #101315;
+    transform: translateY(-2px); 
+    box-shadow: 0 4px 8px rgba(240, 128, 128, 0.2);
+}
+
+#saveBtn:active, #clearBtn:active {
+    transform: translateY(0); 
 }

@@ -1,10 +1,21 @@
 body {
-    margin: 0%;
-    background-color: #ffffff;
+    margin: 0;
+    background-color:#f8f9fa;
     font-family: sans-serif;
     font-style: italic;
     font-weight: bold;
     font-size: large;
     max-height: 100vh;
-    max-width: 100vh;
+    min-width: 100vh;
+    overflow: hidden;
+}
+
+#Title {
+    text-align: center;
+    padding: 16px;
+    color:#343a40;
+    letter-spacing: 1px;
+    font-family: inherit;
+    font-style: inherit;
+    text-transform: uppercase;
 }
