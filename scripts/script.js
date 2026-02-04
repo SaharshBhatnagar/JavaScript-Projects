@@ -81,3 +81,35 @@ saveBtn.addEventListener('click', () => {
     link.href = imageURL;
     link.click();
 });
+
+const brushBtn = document.getElementById('brushBtn');
+const eraserBtn = document.getElementById('eraserBtn');
+
+// Switch to Brush Mode
+brushBtn.addEventListener('click', () => {
+    canvaRender.globalCompositeOperation = 'source-over'; 
+    canvaRender.strokeStyle = 'lightcoral'; 
+    canvaRender.lineWidth = 5;
+});
+
+// Switch to Eraser Mode
+eraserBtn.addEventListener('click', () => {
+    canvaRender.globalCompositeOperation = 'destination-out';
+    canvaRender.lineWidth = 20;
+});
+
+function toggleActive(selectedBtn) {
+    brushBtn.classList.remove('active-tool');
+    eraserBtn.classList.remove('active-tool');
+    selectedBtn.classList.add('active-tool');
+}
+
+brushBtn.addEventListener('click', () => {
+    canvaRender.globalCompositeOperation = 'source-over';
+    toggleActive(brushBtn);
+});
+
+eraserBtn.addEventListener('click', () => {
+    canvaRender.globalCompositeOperation = 'destination-out';
+    toggleActive(eraserBtn);
+});

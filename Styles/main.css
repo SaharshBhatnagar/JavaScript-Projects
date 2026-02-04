@@ -33,7 +33,7 @@ canvas {
     z-index: 10;
 }
 
-#saveBtn, #clearBtn {
+#saveBtn, #clearBtn, #brushBtn, #eraserBtn {
     background-color: #343a40;
     color: white;
     border: none;
@@ -44,12 +44,17 @@ canvas {
     transition: all 0.3s ease;
 }
 
-#saveBtn:hover, #clearBtn:hover {
+#saveBtn:hover, #clearBtn:hover, #brushBtn:hover, #eraserBtn:hover {
     background-color: #101315;
     transform: translateY(-2px); 
     box-shadow: 0 4px 8px rgba(240, 128, 128, 0.2);
 }
 
-#saveBtn:active, #clearBtn:active {
+#saveBtn:active, #clearBtn:active, #brushBtn:active, #eraserBtn:active {
     transform: translateY(0); 
+}
+
+.active-tool {
+    background-color: lightcoral !important;
+    color: white !important;
 }
