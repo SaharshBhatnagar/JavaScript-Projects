@@ -25,6 +25,7 @@ function addTodo() {
                 <p class="todos-task">${TodoInput}</p>
             </div>
             <div class="todos-btn-grp">
+                <input type="checkbox" class="todo-complete" name="complete" value="todocomplete">
                 <button class="todo-edit">Edit</button>
                 <button class="todo-delete">Delete</button>
             </div>
@@ -66,7 +67,7 @@ function checkDeleteEdit(event) {
     else if (item.classList[0] === 'todo-edit') {
 
         const todoWrapper = item.closest('.display-todo');
-        const todoTextElement = todoWrapper.querySelector('.todos-task')
+        const todoTextElement = todoWrapper.querySelector('.todos-task');
 
 
         if (item.innerText === "Edit") {
@@ -89,6 +90,20 @@ function checkDeleteEdit(event) {
             todoTextElement.style.border = "none";
             item.innerText = "Edit"
         }
+    } else if (item.classList[0] === 'todo-complete') {
+        const todoWrapper = item.closest('.display-todo');
+        const todoTextElement = todoWrapper.querySelector('.todos-task');
+        
+        if (item.checked) {
+        todoTextElement.style.textDecoration = "line-through";
+        todoTextElement.style.opacity = "0.6";
+        } else {
+        todoTextElement.style.textDecoration = "none";
+        todoTextElement.style.opacity = "1";
+        }
+
+        saveData();
+
     }
 };
 

@@ -50,7 +50,7 @@
 }
 
 .display-todo {
-    display: flex;
+    display:flex;
     justify-content: space-between;
     align-items: center;
     font-style: italic;
@@ -80,6 +80,21 @@
     padding: 10px;
 }
 
+.todos-btn-grp {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.todo-complete {
+    height: 45px;
+    width: 40px;
+    margin-left: 80px;
+    border-color:dodgerblue;
+    background-color:dodgerblue;
+}
+
 .todo-edit {
     font-style: italic;
     font-weight: bold;
@@ -87,8 +102,6 @@
     font-size: large; 
     height: 45px;
     width: 70px;
-    margin-left: 80px;
-    margin-right: 16px;
     border-radius: 20px;
     border-color:dodgerblue;
     background-color:dodgerblue;
@@ -104,4 +117,12 @@
     border-radius: 20px;
     border-color:crimson;
     background-color:crimson;
+}
+
+.todo-edit:hover {
+    background-color: rgb(0, 93, 186);
+}
+
+.todo-delete:hover {
+    background-color: rgb(182, 0, 36);
 }
