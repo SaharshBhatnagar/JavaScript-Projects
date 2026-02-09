@@ -1,0 +1,128 @@
+.heading {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: black;
+    font-weight: bold;
+    font-style: italic;
+    font-size: 1.2em;
+    font-family: sans-serif;
+}
+
+.Todo-list-head {
+    color: black;
+    display: flex;
+    margin-top: 10px;
+    border-color:chartreuse;
+}
+
+.Todo-input {
+    height: 40px;
+    width: 500px;
+    margin: 20px;
+    padding: 10px;
+    border-radius: 20px;
+    border-color:chartreuse;
+    background-color:aliceblue;
+    font-size: large;
+    font-style: italic;
+    font-family: inherit;
+}
+
+.todo-buttons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.todo-add {
+    height: 60px;
+    width: 80px;
+    margin: 20px;
+    padding: 10px;
+    border-radius: 20px;
+    border-color:chartreuse;
+    background-color:chartreuse;
+    font-style: italic;
+    font-weight: bold;
+    font-family: inherit;
+    font-size: large; 
+}
+
+.display-todo {
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    font-style: italic;
+    font-family: inherit;
+}
+
+.todos-grp {
+    display: inherit;
+    justify-content: inherit;
+    align-items: inherit;
+}
+
+.todos-number {
+    font-size: x-large;
+    align-items: start;
+    margin-right: 20px;
+    margin-left: 20px;
+}
+.todos-task {
+    font-size: x-large;
+    font-family: inherit;
+    height: 36px;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+}
+
+.todos-btn-grp {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.todo-complete {
+    height: 45px;
+    width: 40px;
+    margin-left: 80px;
+    border-color:dodgerblue;
+    background-color:dodgerblue;
+}
+
+.todo-edit {
+    font-style: italic;
+    font-weight: bold;
+    font-family: inherit;
+    font-size: large; 
+    height: 45px;
+    width: 70px;
+    border-radius: 20px;
+    border-color:dodgerblue;
+    background-color:dodgerblue;
+}
+
+.todo-delete {
+    font-style: italic;
+    font-weight: bold;
+    font-family: inherit;
+    font-size: large; 
+    height: 45px;
+    width: 70px;
+    border-radius: 20px;
+    border-color:crimson;
+    background-color:crimson;
+}
+
+.todo-edit:hover {
+    background-color: rgb(0, 93, 186);
+}
+
+.todo-delete:hover {
+    background-color: rgb(182, 0, 36);
+}
