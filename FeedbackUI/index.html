@@ -1,0 +1,54 @@
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feedback UI</title>
+    <link rel="stylesheet" href="styles/body.css">
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/feedback.css">
+ </head>
+ <body>
+    <main>
+        <div class="background"> Feedback Form - UI/UX</div>
+
+        <div class="Feedback-block">
+            <div class="Feedback-head">
+                <span class="Feedback-title">Give Feedback</span>
+                <span ><button class="exit" alt="CLOSE" >X</button></span>
+            </div>
+            <div class="rating-block">
+                <h3 class="rating-title">How would you like to rate us?<div class="rating-error "><p>Please select a valid rating. </p></div></h3>
+                <div class="rating-star">
+                    <input type="radio" id="star1" name="rating" value="5">
+                    <label class="star" for="star1">★</label>
+                    <input type="radio" id="star2" name="rating" value="4">
+                    <label class="star" for="star2">★</label>
+                    <input type="radio" id="star3" name="rating" value="3">
+                    <label class="star" for="star3">★</label>
+                    <input type="radio" id="star4" name="rating" value="2">
+                    <label class="star" for="star4">★</label>
+                    <input type="radio" id="star5" name="rating" value="1">
+                    <label class="star" for="star5">★</label>
+                </div>
+            </div>
+            <div class="feedback-input">
+                <label class="input-head" for="comment">Any comments or suggestions?</label>
+                <textarea class="text-area" id="comment" placeholder="Tell us what you think..." rows="5"></textarea>
+            </div>
+            <div class="submit-feedback">
+                <button class="submit">Submit Feedback</button>
+            </div>
+        </div>
+
+        <div class="Feedback-icon">
+            <button class="icon">
+                <img src="images/feedback__icon_img-removebg-preview.png" alt="Feedback">
+            </button>
+        </div>
+
+    </main>
+
+    <script src="scripts/scripts.js"></script>
+ </body>
+ </html>
