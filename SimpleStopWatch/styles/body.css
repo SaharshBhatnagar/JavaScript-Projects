@@ -1,0 +1,11 @@
+body {
+    margin: 0;
+    font-family: sans-serif;
+    color: black;
+    min-height: 100vh;
+    background: linear-gradient(to bottom, #E0CBB9, #D8A694, #C0887D, #A86A65, #754B4D);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
