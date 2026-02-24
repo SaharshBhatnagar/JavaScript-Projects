@@ -1,1 +1,26 @@
+:root {
+    /* Pastel Color Palette */
+    --col-jan: #b8e2fa; /* Ice Blue */
+    --col-feb: #fccce4; /* Soft Pink */
+    --col-mar: #cbf0cc; /* Mint Green */
+    --col-apr: #dcd6fc; /* Lavender */
+    --col-may: #fde2c9; /* Peach */
+    --col-jun: #fbf8cc; /* Lemon Yellow */
+    --col-jul: #bae6fd; /* Sky Blue */
+    --col-aug: #fde4cf; /* Warm Sand */
+    --col-sep: #e2eeb8; /* Sage */
+    --col-oct: #fcdec9; /* Muted Orange */
+    --col-nov: #d9e2ec; /* Cool Grey */
+    --col-dec: #c2f0e4; /* Aqua */
 
+}
+
+body {
+    font-family: sans-serif;
+    margin: 0;
+    background-color: #f6f6f6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
