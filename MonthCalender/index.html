@@ -7,30 +7,64 @@
     <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles/style.css">
     <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/svg.css">
 </head>
 <body>
     <main>
         <div class="calendar">
 
+            <!-- SVG Definitions -->
+            <svg width="0" height="0" style="position: absolute;">
+                <defs>
+                    <filter id="displacementFilter">
+                        <feTurbulence type="turbulence" baseFrequency="0.01" numOctaves="3" result="turbulence" />
+                        <feDisplacementMap in2="turbulence" in="SourceGraphic" scale="15" xChannelSelector="R" yChannelSelector="G" />
+                    </filter>
+
+                    <symbol id="blob-template" viewBox="0 0 500 500">
+                        <path d="M426.6,155.1c25.4,63.2,16.5,134.3-15.8,187.3c-32.3,53-87.9,88.1-149.3,96.8c-61.4,8.7-128.6-10.1-171.2-53.5
+                        c-42.6-43.4-60.6-111.4-49.8-171.9c10.8-60.5,50.4-113.5,103.3-138.8c52.9-25.3,118.8-22.9,170.8,4.6
+                        C366.6,107.1,401.2,91.9,426.6,155.1z" 
+                        filter="url(#displacementFilter)" 
+                        fill="currentColor" 
+                        opacity="0.95" />
+
+                        <path d="M400,160c20,50,10,120-20,170c-30,50-80,80-140,90c-60,10-120-10-160-50
+                        c-40-40-55-100-45-160c10-60,45-110,95-135c50-25,110-20,160,5
+                        C340,105,380,110,400,160z" 
+                        style="mix-blend-mode: multiply; opacity: 0.3;"
+                        transform="translate(10, 10)"
+                        filter="url(#displacementFilter)"
+                        fill="currentColor"/>
+                    </symbol>
+                </defs>
+            </svg>
+
+            <div class="watercolor-bg" id="svg-color-container">
+                <svg>
+                    <use href="#blob-template"></use>
+                </svg>
+            </div>
+
             <div class="cal-header">
-                <button> Prev </button>
+                <button id="previous"> Prev </button>
 
                 <div class="date-title">
-                    <h2 id="month"> January </h2>
-                    <h3 id="year"> 2026 </h3>
+                    <h2 id="month"></h2>
+                    <h3 id="year"></h3>
                 </div>
 
-                <button> Next </button>
+                <button id="Next"> Next </button>
             </div>
 
             <div class="cal-weekdays">
+                <div id="Sun"> S </div>
                 <div id="Mon"> M </div> 
                 <div id="Tue"> T </div> 
                 <div id="Wed"> W </div> 
                 <div id="Thu"> T </div> 
                 <div id="Fri"> F </div> 
                 <div id="Sat"> S </div> 
-                <div id="Sun"> S </div>
             </div>
 
             <div class="days">
