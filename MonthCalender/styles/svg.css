@@ -1,0 +1,41 @@
+/* Assign variables to classes */
+.jan { --theme-col: var(--col-jan); }
+.feb { --theme-col: var(--col-feb); }
+.mar { --theme-col: var(--col-mar); }
+.apr { --theme-col: var(--col-apr); }
+.may { --theme-col: var(--col-may); }
+.jun { --theme-col: var(--col-jun); }
+.jul { --theme-col: var(--col-jul); }
+.aug { --theme-col: var(--col-aug); }
+.sep { --theme-col: var(--col-sep); }
+.oct { --theme-col: var(--col-oct); }
+.nov { --theme-col: var(--col-nov); }
+.dec { --theme-col: var(--col-dec); }
+
+
+
+.watercolor-bg {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -45%);
+    width: 360px; 
+    height: 360px;
+    z-index: -1;
+    pointer-events: none;
+    /* Flex center to hold the SVG */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.watercolor-bg svg {
+    width: 100%;
+    height: 100%;
+    overflow: visible;
+    filter: drop-shadow(0px 10px 15px rgba(0, 0, 0, 0.05));
+    /* This fills the current text color into the SVG shape */
+    color: var(--theme-col); 
+    fill: currentColor;
+    transition: color 0.5s ease-in-out;
+}
