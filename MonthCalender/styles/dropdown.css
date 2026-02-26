@@ -1,0 +1,83 @@
+.dropdown-wrapper-month {
+    position: relative;
+}
+
+.dropdown-wrapper-month .trigger {
+    cursor: pointer;
+    margin: 0;
+    padding: 4px;
+    border-radius: 8px;
+    transition: background-color 0.2s ease;
+}
+
+.dropdown-wrapper-month .trigger:hover {
+    background-color: rgba(0, 0, 0, 0.05); 
+}
+
+.dropdown-menu-month {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    
+    z-index: 100; 
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    overflow: hidden;
+    
+    max-height: 300px; 
+    width: 300px;
+    
+    display: none;
+    grid-template-columns: repeat(3, 1fr);
+    margin-top: 0;
+}
+
+.dropdown-menu-month .menu-item {
+    background-image: 
+        linear-gradient(rgba(0, 0, 0, 0.3) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 0, 0, 0.3) 1px, transparent 1px);
+    background-size: 100px 100px;
+
+}
+.menu-item {
+    padding: 10px 10px;
+    font-family: sans-serif;
+    font-size: 1rem;
+    font-weight: 500;
+    color: #333;
+    cursor: pointer;
+    text-align: center;
+    transition: background-color 0.2s ease;
+}
+
+.dropdown-menu-month .menu-item:hover {
+    background-color: var(--theme-col);
+}
+
+
+.dropdown-menu-month.show {
+    display: grid;
+}
+
+
+
+
+
+
+.dropdown-wrapper-year {
+    position: relative;
+}
+
+.dropdown-wrapper-year .trigger {
+    cursor: pointer;
+    margin: 0;
+    padding: 4px;
+    border-radius: 8px;
+    transition: background-color 0.2s ease;
+}
+
+.dropdown-wrapper-year .trigger:hover {
+    background-color: rgba(0, 0, 0, 0.05); 
+}

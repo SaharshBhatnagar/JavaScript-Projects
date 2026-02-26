@@ -1,3 +1,4 @@
+const calendarBox = document.querySelector('.calendar');
 const btnPrev = document.querySelector('#previous');
 const btnNext = document.querySelector('#Next');
 const month = document.querySelector('#month');
@@ -28,7 +29,9 @@ function renderCalender() {
     month.innerHTML = Months[activeMonth - 1];
     year.innerHTML = activeYear;
 
-    svgColorContainer.className = `watercolor-bg ${monthClasses[activeMonth - 1]}`;
+    svgColorContainer.className = `watercolor-bg`; 
+
+    calendarBox.className = `calendar ${monthClasses[activeMonth - 1]}`;
 
     const firstDaySnapshot = new Date(activeYear, activeMonth - 1, 1);
     const firstDayOffset = firstDaySnapshot.getDay(); // weekdays 0-6
@@ -76,4 +79,28 @@ btnPrev.addEventListener('click', () => {
     }
     
     renderCalender();
+});
+
+
+const monthWrapper = document.querySelector('.dropdown-wrapper-month');
+const monthDropdown = document.querySelector('.dropdown-menu-month');
+const selectedMonths = document.querySelectorAll('.dropdown-menu-month .menu-item');
+
+monthWrapper.addEventListener('click', (e) => {
+    monthDropdown.classList.toggle('show');
+
+});
+
+selectedMonths.forEach(item => {
+    item.addEventListener('click', () => {
+        activeMonth = parseInt(item.getAttribute('data-month'));
+
+        renderCalender();
+    });
+});
+
+document.addEventListener('click', (e) => {
+    if (!month.contains(e.target) && !monthDropdown.contains(e.target)) {
+        monthDropdown.classList.remove('show');
+    }
 });

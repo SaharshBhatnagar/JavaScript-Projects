@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="styles/style.css">
     <link rel="stylesheet" href="styles/main.css">
     <link rel="stylesheet" href="styles/svg.css">
+    <link rel="stylesheet" href="styles/dropdown.css">
 </head>
 <body>
     <main>
@@ -50,8 +51,34 @@
                 <button id="previous"> Prev </button>
 
                 <div class="date-title">
-                    <h2 id="month"></h2>
-                    <h3 id="year"></h3>
+
+                    <div class="dropdown-wrapper-month">
+                        <h2 id="month" class="trigger"></h2>
+
+                        <div class="dropdown-menu-month" id="month-menu">
+                            <div class="menu-item jan" data-month="1">January</div>
+                            <div class="menu-item feb" data-month="2">February</div>
+                            <div class="menu-item mar" data-month="3">March</div>
+                            <div class="menu-item apr" data-month="4">April</div>
+                            <div class="menu-item may" data-month="5">May</div>
+                            <div class="menu-item jun" data-month="6">June</div>
+                            <div class="menu-item jul" data-month="7">July</div>
+                            <div class="menu-item aug" data-month="8">August</div>
+                            <div class="menu-item sep" data-month="9">September</div>
+                            <div class="menu-item oct" data-month="10">October</div>
+                            <div class="menu-item nov" data-month="11">November</div>
+                            <div class="menu-item dec" data-month="12">December</div>
+
+                        </div>
+                    </div>
+
+                    <div class="dropdown-wrapper-year">
+                        <h3 id="year" class="trigger"></h3>
+
+                        <div class="dropdown-menu-year" id="year-menu">
+                        </div>
+                    </div>
+
                 </div>
 
                 <button id="Next"> Next </button>

@@ -13,7 +13,22 @@
     --col-nov: #d9e2ec; /* Cool Grey */
     --col-dec: #c2f0e4; /* Aqua */
 
+
 }
+
+/* Assign variables to classes */
+.jan { --theme-col: var(--col-jan); }
+.feb { --theme-col: var(--col-feb); }
+.mar { --theme-col: var(--col-mar); }
+.apr { --theme-col: var(--col-apr); }
+.may { --theme-col: var(--col-may); }
+.jun { --theme-col: var(--col-jun); }
+.jul { --theme-col: var(--col-jul); }
+.aug { --theme-col: var(--col-aug); }
+.sep { --theme-col: var(--col-sep); }
+.oct { --theme-col: var(--col-oct); }
+.nov { --theme-col: var(--col-nov); }
+.dec { --theme-col: var(--col-dec); }
 
 body {
     font-family: sans-serif;
