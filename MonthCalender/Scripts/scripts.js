@@ -56,7 +56,7 @@ function renderCalender() {
             isToday = "today";
         };
 
-        days.insertAdjacentHTML('beforeend', `<div class="day ${isToday}">${i + 1}</div>`);
+        days.insertAdjacentHTML('beforeend', `<div id="${1 + i}" class="day ${isToday}">${i + 1}</div>`);
     };
 };
 
@@ -102,5 +102,74 @@ selectedMonths.forEach(item => {
 document.addEventListener('click', (e) => {
     if (!month.contains(e.target) && !monthDropdown.contains(e.target)) {
         monthDropdown.classList.remove('show');
+    }
+});
+
+
+days.addEventListener('click', (e) => {
+    
+    if (e.target.classList.contains('day')) {
+
+        const previouslySelected = days.querySelector('.selected');
+        
+        if (previouslySelected) {
+            previouslySelected.classList.remove('selected');
+        }
+
+        e.target.classList.add('selected');
+
+        selectedDate = parseInt(e.target.id);
+
+    }
+});
+
+
+const yearWrapper = document.querySelector('.dropdown-wrapper-year');
+const yearDropdown = document.querySelector('.dropdown-menu-year');
+
+const startYear = currentYear - 100;
+const endYear = currentYear + 30;
+
+let yearHTML = '';
+
+for(let year = startYear; year <= endYear; year++) {
+    const activeClass = (year === currentYear) ? 'active-year' : '';
+
+    yearHTML += `<div class="menu-year ${activeClass}" value="${year}">${year} </div> `;
+
+}
+
+yearDropdown.innerHTML = yearHTML;
+
+yearWrapper.addEventListener('click', (e) => {
+    const isOpening = !yearDropdown.classList.contains('show');
+    yearDropdown.classList.toggle('show');
+
+    if (isOpening) {
+        
+        const activeElement = yearDropdown.querySelector('.active-year');
+        if (activeElement) {
+            yearDropdown.scrollTop = activeElement.offsetTop - (yearDropdown.clientHeight / 2);
+        }
+    }
+});
+
+yearDropdown.addEventListener('click', (e) => {
+
+    if (e.target.classList.contains('menu-year')) {
+        const selectedYear = e.target.getAttribute('value');
+        activeYear = parseInt(selectedYear);
+
+        renderCalender();
+
+        yearDropdown.classList.remove('show');
+        e.stopPropagation();
+    }
+
+});
+
+document.addEventListener('click', (e) => {
+    if (!yearWrapper.contains(e.target)) {
+        yearDropdown.classList.remove('show');
     }
 });
