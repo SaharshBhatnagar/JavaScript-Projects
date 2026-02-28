@@ -1,0 +1,31 @@
+body {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #eae9e9;
+}
+
+.clicker {
+    cursor: pointer;
+    overflow: hidden;
+    height: 100px;
+    width: 200px;
+    color: white;
+    font-size: 1.6rem;
+    font-weight: bold;
+    font-style: italic;
+    background-color: rgb(255, 78, 78);
+    border: transparent;
+    border-radius: 20px;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.clicker:hover {
+    background-color: rgb(255, 0, 0);
+    
+}
+
+.clicker:active {
+    transform: scale(0.95);
+}
